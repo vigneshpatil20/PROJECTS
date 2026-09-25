@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VibeTune | Music That Understands You</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+
+<body>
+
+    <div class="app">
+
+        <!-- ================= HEADER ================= -->
+<header class="header">
+
+    <div class="logo">
+        <span class="logo-symbol">♫</span>
+        <span>VibeTune</span>
+    </div>
+
+    <div>
+        <button id="historyBtn" class="header-btn">
+            ♡ Your History
+        </button>
+
+        <button
+            class="header-btn"
+            onclick="window.location.href='login.html'"
+        >
+            Login
+        </button>
+    </div>
+
+</header>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero">
+
+            <div class="hero-icon">
+                🎧
+            </div>
+
+            <h1>
+                Music that understands
+                <span>your vibe.</span>
+            </h1>
+
+            <p>
+                Tell us what's going on, how you're feeling,
+                and we'll find music that fits your moment.
+            </p>
+
+        </section>
+
+
+        <!-- ================= INPUT CARD ================= -->
+
+        <section class="input-card">
+
+            <div class="section-label">
+                YOUR CURRENT MOMENT
+            </div>
+
+            <label for="situationInput">
+                What's going on?
+            </label>
+
+            <textarea
+                id="situationInput"
+                maxlength="500"
+                placeholder="Example: I just finished my exams. I'm exhausted but really happy and want to celebrate with my friends..."
+            ></textarea>
+
+
+            <!-- CHARACTER COUNT -->
+
+            <div class="textarea-footer">
+
+                <span>
+                    Describe your mood, situation or energy.
+                </span>
+
+                <span id="characterCount">
+                    0 / 500
+                </span>
+
+            </div>
+
+
+            <!-- ================= SONG COUNT ================= -->
+
+            <div class="song-count-section">
+
+                <label>
+                    How many songs?
+                </label>
+
+                <div class="song-count-buttons">
+
+                    <button
+                        type="button"
+                        class="count-btn"
+                        data-count="5"
+                    >
+                        5
+                    </button>
+
+                    <button
+                        type="button"
+                        class="count-btn active"
+                        data-count="10"
+                    >
+                        10
+                    </button>
+
+                    <button
+                        type="button"
+                        class="count-btn"
+                        data-count="15"
+                    >
+                        15
+                    </button>
+
+                    <button
+                        type="button"
+                        class="count-btn"
+                        data-count="20"
+                    >
+                        20
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= FIND MUSIC ================= -->
+
+            <button
+                id="findMusicBtn"
+                class="primary-btn"
+                type="button"
+            >
+                <span>✦</span>
+                Understand My Vibe
+            </button>
+
+        </section>
+
+
+        <!-- ================= VIBE ANALYSIS ================= -->
+
+        <section
+            id="analysisSection"
+            class="analysis-section hidden"
+        >
+
+            <div class="section-label">
+                VIBE ANALYSIS
+            </div>
+
+            <h2>
+                Here's what we're picking up
+            </h2>
+
+
+            <div class="analysis-grid">
+
+
+                <!-- MOOD -->
+
+                <div class="analysis-card">
+
+                    <div class="analysis-icon">
+                        ☺
+                    </div>
+
+                    <div>
+
+                        <span class="analysis-title">
+                            Mood
+                        </span>
+
+                        <strong id="moodResult">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ENERGY -->
+
+                <div class="analysis-card">
+
+                    <div class="analysis-icon">
+                        ⚡
+                    </div>
+
+                    <div>
+
+                        <span class="analysis-title">
+                            Energy
+                        </span>
+
+                        <strong id="energyResult">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTEXT -->
+
+                <div class="analysis-card">
+
+                    <div class="analysis-icon">
+                        ✦
+                    </div>
+
+                    <div>
+
+                        <span class="analysis-title">
+                            Context
+                        </span>
+
+                        <strong id="contextResult">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SOCIAL -->
+
+                <div class="analysis-card">
+
+                    <div class="analysis-icon">
+                        ♡
+                    </div>
+
+                    <div>
+
+                        <span class="analysis-title">
+                            Social
+                        </span>
+
+                        <strong id="socialResult">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RECOMMENDATIONS ================= -->
+
+        <section
+            id="recommendationsSection"
+            class="recommendations-section hidden"
+        >
+
+            <div class="recommendation-header">
+
+                <div>
+
+                    <div class="section-label">
+                        PERSONALIZED FOR YOU
+                    </div>
+
+                    <h2>
+                        Your soundtrack
+                    </h2>
+
+                    <p id="recommendationDescription">
+                        Songs selected for your current vibe.
+                    </p>
+
+                </div>
+
+
+                <span
+                    id="recommendationCount"
+                    class="recommendation-count"
+                >
+                    0 songs
+                </span>
+
+            </div>
+
+
+            <!-- SONGS FROM LAST.FM API WILL APPEAR HERE -->
+
+            <div
+                id="songsContainer"
+                class="songs-container"
+            >
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= HISTORY ================= -->
+
+        <section
+            id="historySection"
+            class="history-section hidden"
+        >
+
+            <div class="section-label">
+                YOUR JOURNEY
+            </div>
+
+            <h2>
+                What we've learned about you
+            </h2>
+
+
+            <div
+                id="historyContainer"
+                class="history-container"
+            >
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LOADING ================= -->
+
+        <section
+            id="loading"
+            class="loading hidden"
+        >
+
+            <div class="spinner"></div>
+
+            <h3>
+                Understanding your vibe...
+            </h3>
+
+            <p>
+                Finding music that fits your moment.
+            </p>
+
+        </section>
+
+
+        <!-- ================= ERROR ================= -->
+
+        <div
+            id="errorMessage"
+            class="error-message hidden"
+        ></div>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+
+            <p>
+                VibeTune
+            </p>
+
+            <span>
+                Music that understands your moment.
+            </span>
+
+        </footer>
+
+    </div>
+
+
+    <!-- ================= EXTERNAL JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
