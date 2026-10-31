@@ -50,7 +50,7 @@ The main objective is to make music discovery more personal, interactive, and em
 
 ---
 
-## 💡 4. Key Learning Outcomes
+## 💡 2. Key Learning Outcomes
 
 - Practical experience in web development.
 - Understanding frontend development concepts.
@@ -62,7 +62,7 @@ The main objective is to make music discovery more personal, interactive, and em
 
 ---
 
-## 🚀 5. Future Enhancements
+## 🚀 3. Future Enhancements
 
 - Improve responsive design.
 - Enhance user interface and experience.
